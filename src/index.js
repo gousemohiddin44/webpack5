@@ -1,3 +1,5 @@
+import "./styles/index.css";
+
 const obj1 = {
     random: '1',
     random2: 2,

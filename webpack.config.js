@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 let mode = "development";
 
 if(process.env.NODE_ENV === 'production') {
@@ -16,11 +17,20 @@ module.exports = {
                     loader: "babel-loader",
                 }
             },
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
+            }
         ]
     },
+
+    plugins: [
+        new MiniCssExtractPlugin()
+    ],
 
     devtool: "source-map", // false - for readability in build main.js // source-map - for viewing from souce code,not from build main.js
     devServer: {
         contentBase: './dist',
+        hot: true,
     }
 }
