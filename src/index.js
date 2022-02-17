@@ -1,4 +1,4 @@
-import "./styles/index.css";
+import "./styles/index.scss";
 
 const obj1 = {
     random: '1',
