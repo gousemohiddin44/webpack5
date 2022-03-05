@@ -1,14 +1,4 @@
-import "./styles/index.scss";
+import { render } from "react-dom";
+import App from "./components/App";
 
-const obj1 = {
-    random: '1',
-    random2: 2,
-};
-
-const obj2 = {
-    ...obj1,
-    random3: '3',
-}
-
-console.log(obj1);
-console.log(obj2);
+render(<App />, document.getElementById('root'));

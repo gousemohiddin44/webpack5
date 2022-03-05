@@ -13,14 +13,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
                 }
             },
             {
-                test: /\.s?css$/i,
+                test: /\.s?css$/i, // test : /\.(s[ac] | c)css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
             }
         ]
@@ -29,6 +29,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin()
     ],
+
+    resolve: {
+        extensions: [".js", ".jsx"]
+    },
 
     devtool: "source-map", // false - for readability in build main.js // source-map - for viewing from souce code,not from build main.js
     devServer: {
